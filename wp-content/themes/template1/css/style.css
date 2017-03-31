@@ -1,0 +1,583 @@
+@import url(../assets/bootstrap-3.3.7/css/bootstrap.min.css);
+@import url(../assets/font-awesome-4.7.0/css/font-awesome.min.css);
+@import url(../assets/flaticon/flaticon.css);
+@import url(../assets/animate/animate-v2.css);
+@import url(../assets/scroll-up/scroll-up.css);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,700);
+
+/************************************
+=reset
+************************************/
+body
+{
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+ul
+{
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+section
+{
+    position: relative;
+	overflow: hidden;
+}
+a,
+a:focus
+{
+    text-decoration: none;
+	outline: 0;
+}
+/************************************
+=override
+************************************/
+.btn,
+.alert,
+.panel,
+.navbar,
+.navbar-toggle,
+.dropdown-menu,
+.form-control,
+.modal-content,
+.input-group-addon
+{
+    border-radius: 0;
+}
+.navbar-default
+{
+    margin-bottom: 0;
+    border: none;
+}
+.navbar-default .navbar-toggle
+{
+    background-color: transparent;
+}
+.navbar-brand
+{
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.navbar-brand img
+{
+    height: 100%;
+}
+.btn-primary
+{
+    background-color: #f6c452;
+    border-color: #f6c452;
+}
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus
+{
+    background-color: #008eae;
+    border-color: #007995;
+}
+.btn-secondary
+{
+    background: #fa6e08;
+    border: none;
+    color: #fff;
+}
+.btn-secondary:active,
+.btn-secondary.active,
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary.focus
+{
+    background-color: #cb5804;
+    border-color: #b24d04;
+    color: #fff;
+}
+/************************************
+=common
+************************************/
+.test
+{
+    border: 1px solid black !important;
+}
+.overlay
+{
+    position: relative;
+    z-index: 0;
+}
+.overlay::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.img-full
+{
+    display: block;
+    width: 100%;
+}
+.has-image
+{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main
+{
+    padding: 60px 0;
+}
+.no-padding
+{
+    padding: 0;
+}
+.slogan
+{
+    font-size: 60px;
+}
+.title
+{
+    margin: 0;
+    font-size: 36px;
+}
+.title::after
+{
+    content: '';
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    height: 2px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background: #3db7ef;
+    border-radius: 1px;
+}
+.title.inverse::after
+{
+    background: #fff;
+}
+[data-animation]
+{
+    opacity: 0;
+}
+.icon
+{
+    margin-right: 5px;
+    font-size: 18px;
+}
+/************************************
+=slider
+************************************/
+.slick-slider
+{
+    margin-bottom: 0;
+}
+.slick-slide
+{
+    outline: 0;
+}
+.slick-dots
+{
+    left: 10%;
+    bottom: 20%;
+    width: auto;
+}
+.slick-dots li
+{
+    margin: 0 6px;
+}
+.slick-dots li button
+{
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: auto;
+    background: #fff;
+    border: 2px solid;
+    border-color: transparent;
+    border-radius: 50%; 
+}
+.slick-dots li.slick-active button
+{
+    width: 28px;
+    height: 28px;
+    border-color: #3db7ef;
+    background: #3db7ef;
+}
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before
+{
+    content: none;
+}
+/************************************
+=header
+************************************/
+header
+{
+    overflow: hidden;
+}
+header .top-nav
+{
+    position: relative;
+}
+header .top-nav .top-nav-logo
+{
+    position: absolute;
+    left: -40px;
+    width: 24%;
+    padding: 30px;
+    background: #084460;
+    
+    -webkit-transform: skewX(-36deg);
+    transform: skewX(-36deg);
+}
+header .top-nav .top-nav-logo img
+{
+    display: block;
+    height: 50px;
+    margin: auto;
+    
+    -webkit-transform: skewX(36deg);
+    transform: skewX(36deg);
+}
+header .top-nav .contact-info
+{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 15px;
+}
+header .top-nav .contact-info > li
+{
+    display: inline-block;
+}
+header .top-nav .contact-info > li:not(:last-child)
+{
+    margin-right: 15px
+}
+header .top-nav .contact-info > li > .icon
+{
+    position: relative;
+    top: 2px;
+    font-size: 20px;
+}
+header .top-nav .contact-info > li > a,
+header .top-nav .contact-info > li > a:hover,
+header .top-nav .contact-info > li > span
+{
+    color: inherit;
+}
+header #sticky.active
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1031;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+header #sticky #main-menu
+{
+    position: relative;
+    left: 18px;
+    width: 81%;
+    margin-top: 78px;
+    padding: 0 20px;
+    float: right;
+    background: #172646;
+    color: #fff;
+    
+    -webkit-transform: skewX(-36deg);
+    transform: skewX(-36deg);
+}
+header #sticky.active #main-menu
+{   
+    left: 0;
+    width: 100%;
+    margin-top: 0;
+    padding: 20px;
+    float: none;
+    
+    -webkit-transform: skewX(0);
+    transform: skewX(0);
+    
+    -webkit-transition: padding .3s ease-in-out 0s;
+    transition: padding .3s ease-in-out 0s;
+}
+header #sticky #main-menu > .nav
+{
+    -webkit-transform: skewX(36deg);
+    transform: skewX(36deg);
+}
+header #sticky.active #main-menu > .nav
+{
+    -webkit-transform: skewX(0);
+    transform: skewX(0);
+}
+header #sticky #main-menu > .nav > li
+{
+    position: relative;
+    padding: 0 15px;
+}
+header #sticky #main-menu > .nav > li::after
+{
+    content: '';
+    position: absolute;
+    top: 14px;
+    right: 0;
+    display: block;
+    width: 1px;
+    height: 20px;
+    background: #fff;
+}
+header #sticky #main-menu > .nav > li > a
+{
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #fff;
+}
+/************************************
+=banner
+************************************/
+.banner h1
+{
+    font-size: 60px;
+    font-weight: 700;
+}
+.btn-banner
+{
+    min-width: 180px;
+    margin-top: 15px;
+    padding: 16px 10px;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: inherit;
+}
+.btn-banner:hover
+{
+    color: inherit;
+}
+/************************************
+=banner slider
+************************************/
+.banner-slider .slider-item
+{
+    position: relative;
+}
+.banner-slider .slider-item .has-image
+{
+    width: 100vw;
+    height: 100vh;
+    background-attachment: inherit;
+}
+.banner-slider .slider-item .slider-caption
+{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: -webkit-calc(50% - 20px);
+    width: calc(50% - 20px);
+    text-align: left;
+    color: #fff;
+    
+    -webkit-transform: translateY(-50%); 
+    transform: translateY(-50%); 
+}
+.banner-slider .slider-item .slider-caption h1
+{
+    margin-top: 0;
+}
+.banner-slider .slider-item .slider-caption p
+{
+    font-size: 18px;
+}
+/************************************
+=google map
+************************************/
+#googleMap
+{
+    height: 100vh;
+    overflow: hidden;
+}
+/************************************
+=media
+************************************/
+/************************************
+=xlarge
+************************************/
+@media (min-width: 1200px) 
+{
+
+}
+/************************************
+=medium
+************************************/
+@media (max-width: 1199px)
+{
+    header .top-nav
+    {
+        padding: 15px;
+        overflow: hidden;
+        background: #084460;
+    }
+    header .top-nav .top-nav-logo
+    {
+        position: relative;
+        left: auto;
+        display: block;
+        width: 100%;
+        max-width: 180px;
+        padding: 0;
+        float: left;
+        background: none;
+        
+        -webkit-transform: none;
+        transform: none;
+    }
+    header .top-nav .top-nav-logo img
+    {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        
+        -webkit-transform: none;
+        transform: none;
+    }
+    header .top-nav .contact-info
+    {
+        position: relative;
+        left: auto;
+        top: auto;
+        float: right;
+    }
+    header .top-nav .contact-info
+    {
+        position: relative;
+        right: auto;
+        top: auto;
+        padding-left: 0;
+        padding-right: 0;
+        float: right;
+    }
+    header .top-nav .contact-info > li
+    {
+        color: #fff;
+    }
+    header #sticky #main-menu 
+    {
+        left: 0;
+        width: auto;
+        margin-top: 0;
+        padding: 0;
+        float: none;
+        
+        -webkit-transform: none;
+        transform: none;
+    }
+    header #sticky #main-menu > .nav 
+    {
+        margin: 0;
+        
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+/************************************
+=small
+************************************/
+@media (max-width: 991px)
+{
+    .banner-slider .slider-item .slider-caption
+    {
+        left: 15px;
+        width: -webkit-calc(60% - 20px);
+        width: calc(60% - 20px);
+    }
+    .slick-dots
+    {
+        left: 15px;
+        bottom: 15%;
+    }
+}
+/************************************
+=xsmall
+************************************/
+@media (max-width: 767px)
+{
+    .slogan
+    {
+        font-size: 28px;
+        font-weight: 400;
+    }
+    .slick-dots li button
+    {
+        width: 20px;
+        height: 20px;
+    }
+    .slick-dots li.slick-active button
+    {
+        width: 24px;
+        height: 24px;
+    }
+    .banner-slider .slider-item .slider-caption
+    {
+        left: 0;
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .banner-slider .slider-item .slider-caption p
+    {
+        font-size: 16px;
+    }
+    header .top-nav .top-nav-logo,
+    header .top-nav .contact-info
+    {
+        float: none;
+    }
+    header .top-nav .top-nav-logo
+    {
+        margin: auto;
+    }
+    header .top-nav .contact-info
+    {
+        text-align: center;
+    }
+    header .top-nav .contact-info > li
+    {
+        display: block;
+        margin: 0;
+    }
+    header .top-nav .contact-info > li > .icon
+    {
+        display: none;
+    }
+    header .navbar-header
+    {
+        padding-left: 15px;
+        padding-right: 15px;
+        background: #172646;
+    }
+    header #sticky.active #main-menu
+    {
+        margin: 0;
+    }
+    header #sticky #main-menu > .nav > li::after
+    {
+        content: none;
+    }
+}
+/************************************
+=xxsmall
+************************************/
+@media (max-width: 468px)
+{
+    
+}
