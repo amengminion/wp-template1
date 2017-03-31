@@ -69,7 +69,7 @@ $stylesheetUri = get_stylesheet_directory_uri();
     </div>
 </section>
 <section id="our-mission" class="main has-image" style="background-image: url(<?php echo $stylesheetUri; ?>/img/parallax1.jpg);">
-    <div class="container">
+    <div class="container wow fadeInUp" data-wow-delay="1s" data-wow-duration="1s">
         <h1 class="slogan">Our Mission</h1>
         <p>
             Transitec Transportation Company is committed to providing efficient and reliable services across all its business segments to its valued customers where safety is our top priority. Transitec will commit its resources to safe and environmentally sound operating practices. 
@@ -81,7 +81,7 @@ $stylesheetUri = get_stylesheet_directory_uri();
     </div>
 </section>
 <section id="services" class="main">
-    <div class="container">
+    <div class="container wow fadeInUp" data-wow-delay="1s" data-wow-duration="1s">
         <h1 class="title">Our Services</h1>
         <p>
             Welcome to our transportation world. We sincerely hope that each and every user entering our website wil find exactly what he/she is looking for.
@@ -102,7 +102,7 @@ $stylesheetUri = get_stylesheet_directory_uri();
     </div>
 </section>
 <section id="testimonial" class="main has-image" style="background-image: url(<?php echo $stylesheetUri; ?>/img/parallax2.jpg);">
-    <div class="container">
+    <div class="container wow fadeInUp" data-wow-delay="1s" data-wow-duration="1s">
         <div class="row">
             <div class="col-md-4">
                 <img src="<?php echo $stylesheetUri; ?>/img/broker.jpg" alt="">
@@ -123,9 +123,6 @@ $stylesheetUri = get_stylesheet_directory_uri();
     </div>
 </section>
 <section id="googleMap"></section>
-<footer>
-
-</footer>
 
 <script type="text/javascript" src="<?php echo $stylesheetUri; ?>/assets/handlebars.js/handlebars-v4.0.5.js"></script>
 <script type="text/javascript" src="<?php echo $stylesheetUri; ?>/assets/wow/wow.min.js"></script>

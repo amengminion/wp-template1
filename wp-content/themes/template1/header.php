@@ -46,7 +46,7 @@ $stylesheetUri = get_stylesheet_directory_uri();
                     <li><i class="icon fa fa-phone"></i><span>02 535 0822</span></li>
                 </ul>
             </div>
-            <div id="sticky" class="container-fluid row">
+            <div id="top-menu" class="container-fluid row">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
@@ -56,12 +56,22 @@ $stylesheetUri = get_stylesheet_directory_uri();
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="nav navbar-nav">
-                        <li><a href="http://www.realestate.minionsolutions.com" target="_blank">Realestate</a></li>
-                        <li><a href="http://www.minionsolutions.com/Template1" target="_blank">Template 1</a></li>
-                        <li><a href="http://www.minionsolutions.com/Template2" target="_blank">Template 2</a></li>
-                    </ul>
+                    <?php
+                    $args = array(
+                        'container' => 'ul',
+                        'menu_class' => 'nav navbar-nav'
+                    );
+                    wp_nav_menu($args); 
+                    ?>
                 </div><!-- /.navbar-collapse -->
+            </div>
+            <div id="sticky-menu">             
+                <?php
+                $args = array(
+                    'container' => 'ul'
+                );
+                wp_nav_menu($args); 
+                ?>
             </div>
 	    </nav>
 	</header>

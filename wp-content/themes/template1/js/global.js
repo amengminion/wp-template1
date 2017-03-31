@@ -17,10 +17,10 @@ function stickyHeader(){
 
     if( screenTop > 100 )
     {
-        $('#sticky').addClass(stickyClass);
+        $('#sticky-menu').addClass(stickyClass);
     }
     else
     {
-        $('#sticky').removeClass(stickyClass);
+        $('#sticky-menu').removeClass(stickyClass);
     }
 }

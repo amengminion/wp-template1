@@ -11,6 +11,7 @@
 body
 {
 	margin: 0;
+    margin-bottom: 70px;
 	font-family: 'Roboto', sans-serif;
 }
 ul
@@ -23,6 +24,7 @@ section
 {
     position: relative;
 	overflow: hidden;
+    background: #fff;
 }
 a,
 a:focus
@@ -272,17 +274,7 @@ header .top-nav .contact-info > li > span
 {
     color: inherit;
 }
-header #sticky.active
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1031;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-header #sticky #main-menu
+header #top-menu #main-menu
 {
     position: relative;
     left: 18px;
@@ -296,36 +288,17 @@ header #sticky #main-menu
     -webkit-transform: skewX(-36deg);
     transform: skewX(-36deg);
 }
-header #sticky.active #main-menu
-{   
-    left: 0;
-    width: 100%;
-    margin-top: 0;
-    padding: 20px;
-    float: none;
-    
-    -webkit-transform: skewX(0);
-    transform: skewX(0);
-    
-    -webkit-transition: padding .3s ease-in-out 0s;
-    transition: padding .3s ease-in-out 0s;
-}
-header #sticky #main-menu > .nav
+header #top-menu #main-menu > .nav
 {
     -webkit-transform: skewX(36deg);
     transform: skewX(36deg);
 }
-header #sticky.active #main-menu > .nav
-{
-    -webkit-transform: skewX(0);
-    transform: skewX(0);
-}
-header #sticky #main-menu > .nav > li
+header #top-menu #main-menu > .nav > li
 {
     position: relative;
     padding: 0 15px;
 }
-header #sticky #main-menu > .nav > li::after
+header #top-menu #main-menu > .nav > li::after
 {
     content: '';
     position: absolute;
@@ -336,10 +309,72 @@ header #sticky #main-menu > .nav > li::after
     height: 20px;
     background: #fff;
 }
-header #sticky #main-menu > .nav > li > a
+header #top-menu #main-menu > .nav > li > a
 {
     letter-spacing: 1px;
     font-weight: bold;
+    color: #fff;
+}
+header #sticky-menu
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1031;
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    background: #172646;
+}
+header #sticky-menu.active
+{
+    display: block;
+}
+header #sticky-menu > ul
+{
+    text-align: center;
+}
+header #sticky-menu > ul > li
+{
+    display: inline-block;
+}
+header #sticky-menu > ul > li > a
+{
+    padding: 15px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
+/************************************
+=footer
+************************************/
+footer
+{
+    position: fixed;
+    bottom: 0;
+    z-index: -5;
+    width: 100%;
+    height: 70px;
+    padding: 15px;
+    background: #172646;
+}
+footer .main-navigation
+{
+    margin-top: 10px;
+}
+footer .main-navigation .primary-menu 
+{
+    text-align: center;
+}
+footer .main-navigation .primary-menu > li
+{
+    display: inline-block;
+}
+footer .main-navigation .primary-menu > li > a
+{
+    padding: 0 15px;
     color: #fff;
 }
 /************************************
@@ -470,7 +505,7 @@ header #sticky #main-menu > .nav > li > a
     {
         color: #fff;
     }
-    header #sticky #main-menu 
+    header #top-menu #main-menu 
     {
         left: 0;
         width: auto;
@@ -481,7 +516,7 @@ header #sticky #main-menu > .nav > li > a
         -webkit-transform: none;
         transform: none;
     }
-    header #sticky #main-menu > .nav 
+    header #top-menu #main-menu > .nav 
     {
         margin: 0;
         
@@ -565,13 +600,13 @@ header #sticky #main-menu > .nav > li > a
         padding-right: 15px;
         background: #172646;
     }
-    header #sticky.active #main-menu
-    {
-        margin: 0;
-    }
-    header #sticky #main-menu > .nav > li::after
+    header #top-menu #main-menu > .nav > li::after
     {
         content: none;
+    }
+    header #sticky-menu.active
+    {
+        display: none;
     }
 }
 /************************************
