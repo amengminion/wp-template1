@@ -46,9 +46,8 @@ $stylesheetUri = get_stylesheet_directory_uri();
             <textarea nrows="10" class="form-control" placeholder="Message"></textarea>
         </div>
         <div class="form-group clearfix">
-            <button id="btnSend" class="btn btn-primary">Send</button>
+            <button class="btn btn-primary">Send</button>
         </div>
-        <div></div>
     </div>
 </section>
 <section id="why-us" class="main">
@@ -56,12 +55,12 @@ $stylesheetUri = get_stylesheet_directory_uri();
         <h1 class="title">Why Us</h1>
         <div id="why-us-container" class="row" ></div>
         <script id="why-us-template" type="text/x-handlebars-template">
-            {{#each why-us}}
+            {{#each this}}
                 <div class="col-md-4">
                     <article>
-                        <i class="{{icon}}"></i>
-                        <h3>{{title}}</h3>
-                        {{{content}}}
+                        <i class="{{acf.fonticon}}"></i>
+                        <h3>{{title.rendered}}</h3>
+                        {{{content.rendered}}}
                     </article>
                 </div>
             {{/each}}
@@ -195,53 +194,5 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-<script>
-    $('#btnSend').click(function(){
-        getToken();
-        /*
-        var data = {
-            title : 'test'
-        }
-        $.ajax({
-            method: 'POST',
-            url: 'http://weblab.minionsolutions.com/wp-json/wp/v2/pages/',
-            data: data,
-            dataType: 'json',
-            header: 'Authorization' : 'Bearer ' + '',
-            success: function(data){
-                alert(data.title.rendered);
-            },
-            error: function(data){
-                alert(data.status);
-            }
-        });
-        */
-    });
-
-    function getToken(){
-        var url = 'http://www.weblab.minionsolutions.com/json-wp' + '/wp/v2/posts';
-        var data = {
-            title: 'testpost'
-        };
-
-        $.ajax({
-            method: "POST",
-            url: url,
-            data: data,
-            beforeSend: function ( xhr ) {
-                xhr.setRequestHeader( 'X-WP-Nonce', POST_SUBMITTER.nonce );
-            },
-            success : function( response ) {
-                console.log( response );
-                alert( POST_SUBMITTER.success );
-            },
-            fail : function( response ) {
-                console.log( response );
-                alert( POST_SUBMITTER.failure );
-            }
-        });
-    }
-        
-</script>
 
 <?php get_footer(); ?>

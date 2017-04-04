@@ -39,7 +39,7 @@ $stylesheetUri = get_stylesheet_directory_uri();
     <header>
 	    <nav class="navbar navbar-default">
             <div class="top-nav clearfix">
-                <a href="<?php site_url(); ?>" class="top-nav-logo"><img src="<?php echo $stylesheetUri; ?>/img/logo.png" alt=""></a>
+                <a href="<?php site_url(); ?>" class="top-nav-logo"><img src="<?php custom_logo_uri(); ?>" alt=""></a>
                 <ul class="contact-info">
                     <li><i class="icon fa fa-envelope"></i><a href="mailto: weblab@minionsolutions.com">weblab@minionsolutions.com</a></li>
                     <li><i class="icon fa fa-clock-o"></i><span>Mon-Fri: 9:30-18:30</span></li>

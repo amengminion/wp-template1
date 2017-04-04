@@ -23,10 +23,10 @@
 define('DB_NAME', 'minion_template1');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'minion_realestat');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', '#db_template123#');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');

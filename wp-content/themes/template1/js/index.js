@@ -6,34 +6,37 @@ $(document).ready(function(){
         fade: true,
     });
     
+    
     //section "why us" template
     var whyUsContainer = $('#why-us-container');
     if(whyUsContainer)
     {
-        var whyUsData = {
-            'why-us' : [
-                {
-                    'icon' : 'fa fa-thumbs-up',
-                    'title' : 'Best Service',
-                    'content' : '<p>Our Mission is to attract and retain customers by providing Best in Class transportation solutions and fostering a profitable, disciplined culture of safety, service and trust.</p>'
-                },
-                {
-                    'icon' : 'fa fa-users',
-                    'title' : 'Reputation',
-                    'content' : '<p>Our Mission is to attract and retain customers by providing Best in Class transportation solutions and fostering a profitable, disciplined culture of safety, service and trust.</p>'
-                },
-                {
-                    'icon' : 'fa fa-lock',
-                    'title' : 'Safety',
-                    'content' : '<p>Our Mission is to attract and retain customers by providing Best in Class transportation solutions and fostering a profitable, disciplined culture of safety, service and trust.</p>'
-                },
-            ]
-        };
-        var whyUsScript = $('#why-us-template').html();
-        var whyUsCompiled = Handlebars.compile(whyUsScript);
-        var whyUsTemplate = whyUsCompiled(whyUsData);
+        
+        var url = localData.siteUrl + '/wp-json/wp/v2/homepage/';
+        var dataQuery = {
+            'filter' : {
+                'posts_per_page' : 3,
+                'category_name' : 'why us'
+            }
+        }
 
-        whyUsContainer.html(whyUsTemplate);
+        $.ajax({
+            method: 'GET',
+            url: url,
+            data: {
+                filter : {
+                    'posts_per_page' : 1
+                }
+            },
+            dataType: 'json',
+            success: function(data){
+                var whyUsScript = $('#why-us-template').html();
+                var whyUsCompiled = Handlebars.compile(whyUsScript);
+                var whyUsTemplate = whyUsCompiled(data);
+
+                whyUsContainer.html(whyUsTemplate);
+            }
+        });
     }
     //end of section "why us" template
     
